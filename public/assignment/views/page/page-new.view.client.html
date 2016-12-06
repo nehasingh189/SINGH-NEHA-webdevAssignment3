@@ -1,0 +1,48 @@
+﻿        <nav style="background-color: #F8F8F8" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-1 pull-left navbar-text ">
+                        <a class="portraithide" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" target="_self"><span class="glyphicon glyphicon-chevron-left glyphicon-widget-color"></span></a>
+                    </div>
+                    <div class="col-xs-9 navbar-brand navbar-brand-widget-color">New Page</div>
+                    <div class="pull-right col-xs-1 navbar-text">
+                        <a ng-click="model.createPage(page)" class="pull-right"><span class="glyphicon glyphicon-ok glyphicon-widget-color"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="TopSpacing">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                                <div class="FormControlSpace"></div>
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" class="form-control margin-bottom" placeholder="Page Name" ng-model="page.name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="headertext">Title</label>
+                                    <input type="text" id="headertext" name="headertext" class="form-control margin-bottom" placeholder="Page Title" ng-model="page.title">
+                                </div>
+                                <div class="FormControlSpace"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="TopSpacing">
+                    &nbsp;
+                </div>
+            </div>
+        </div>
+        <nav style="background-color: #F8F8F8" class="navbar-default navbar-fixed-bottom ">
+            <div class="container-fluid">
+                <div class="navbar-right">
+                    <div class="navbar-text pull-right">
+                        <a href="#/user/{{model.userId}}" target="_self"><span class="glyphicon glyphicon-user glyphicon-widget-color-alt"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>

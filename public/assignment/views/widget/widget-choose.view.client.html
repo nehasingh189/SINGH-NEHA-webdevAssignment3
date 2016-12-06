@@ -1,0 +1,47 @@
+﻿        <nav style="background-color: #F8F8F8" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-1 pull-left navbar-text ">
+                        <a class="portraithide" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" target="_self"><span class="glyphicon glyphicon-chevron-left glyphicon-widget-color"></span></a>
+                    </div>
+                    <div class="col-xs-9 navbar-brand navbar-brand-widget-color">Choose Widget</div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="TopSpacingList">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <ul class="list-group">
+                            <li class="list-group-item RemoveBorder"><a ng-click="model.getWidgetType('Header')">Header</a></li>
+                            <li class="list-group-item RemoveBorder">Label</li>
+                            <li class="list-group-item RemoveBorder">HTML</li>
+                            <li class="list-group-item RemoveBorder">Text Label</li>
+                            <li class="list-group-item RemoveBorder">Link</li>
+                            <li class="list-group-item RemoveBorder">Button</li>
+                            <li class="list-group-item RemoveBorder"><a ng-click="model.getWidgetType('Image')">Image</a></li>
+                            <li class="list-group-item RemoveBorder"><a href="widget-youtube.html">YouTube</a></li>
+                            <li class="list-group-item RemoveBorder">Data Table</li>
+                            <li class="list-group-item RemoveBorder">Repeater</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-8" ng-include="'views/widget/widget-new-'+model.widgetType+'.html'">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav style="background-color: #F8F8F8" class="navbar-default navbar-fixed-bottom ">
+            <div class="container-fluid">
+                <div class="navbar-right">
+                    <div class="navbar-text pull-right">
+                        <a href="#/user/{{model.userId}}" target="_self"><span class="glyphicon glyphicon-user glyphicon-widget-color-alt"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
