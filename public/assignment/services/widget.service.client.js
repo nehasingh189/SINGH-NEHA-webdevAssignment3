@@ -16,19 +16,14 @@
 
         var api = {
             findWidgetsByPageId: findWidgetsByPageId,
-<<<<<<< HEAD
             findWidgetsById: findWidgetsById,
             updateWidget: updateWidget,
             deleteWidget: deleteWidget,
             createWidget: createWidget
-=======
-            findWidgetsById: findWidgetsById
->>>>>>> 018c92c374362dfeaa86352bc5acf10b9b02d85d
         };
 
         return api;
 
-<<<<<<< HEAD
         function createWidget(widget) {
             widgets.push(widget);
             return true;
@@ -58,8 +53,6 @@
             return false;
         }
 
-=======
->>>>>>> 018c92c374362dfeaa86352bc5acf10b9b02d85d
         function findWidgetsById(wgid)
         {
             for (var w in widgets) {

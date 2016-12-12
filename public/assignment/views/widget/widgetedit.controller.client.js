@@ -3,11 +3,7 @@
     .module("WebAppMaker")
     .controller("WidgetEditController", WidgetEditController);
 
-<<<<<<< HEAD
     function WidgetEditController($routeParams, WidgetService, $sce, $location) {
-=======
-    function WidgetEditController($routeParams, WidgetService, $sce) {
->>>>>>> 018c92c374362dfeaa86352bc5acf10b9b02d85d
         var vm = this;
         
         vm.userId = parseInt($routeParams.uid);
@@ -15,13 +11,10 @@
         vm.pageId = parseInt($routeParams.pid);
         vm.wgid = parseInt($routeParams.wgid);
 
-<<<<<<< HEAD
         vm.updateWidget = updateWidget;
         vm.deleteWidget = deleteWidget;
 
 
-=======
->>>>>>> 018c92c374362dfeaa86352bc5acf10b9b02d85d
         //vm.checkSafeHtml = checkSafeHtml;
         //vm.checkSafeYouTubeUrl = checkSafeYouTubeUrl;
 
@@ -30,7 +23,6 @@
         }
         init();
 
-<<<<<<< HEAD
         function deleteWidget() {
 
             var retVal = WidgetService.deleteWidget(vm.wgid);
@@ -57,8 +49,6 @@
             }
         }
 
-=======
->>>>>>> 018c92c374362dfeaa86352bc5acf10b9b02d85d
         //function checkSafeHtml(html) {
         //    return $sce.trustAsHtml(html);
         //}

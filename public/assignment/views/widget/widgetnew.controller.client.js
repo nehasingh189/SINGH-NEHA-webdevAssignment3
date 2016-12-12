@@ -3,17 +3,12 @@
     .module("WebAppMaker")
     .controller("WidgetNewController", WidgetNewController);
 
-<<<<<<< HEAD
     function WidgetNewController($routeParams, WidgetService,$location) {
-=======
-    function WidgetNewController($routeParams, WidgetService) {
->>>>>>> 018c92c374362dfeaa86352bc5acf10b9b02d85d
         var vm = this;
         
         vm.userId = parseInt($routeParams.uid);
         vm.websiteId = parseInt($routeParams.wid);
         vm.pageId = parseInt($routeParams.pid);
-<<<<<<< HEAD
 
         vm.getWidgetType = getWidgetType;
         vm.createWidget = createWidget;
@@ -37,7 +32,5 @@
                 console.log("Error");
             }
         }
-=======
->>>>>>> 018c92c374362dfeaa86352bc5acf10b9b02d85d
     }
 })();
