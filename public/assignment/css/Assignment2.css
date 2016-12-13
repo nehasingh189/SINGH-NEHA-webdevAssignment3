@@ -20,6 +20,10 @@ body {
 .FormControlSpace {
     height:50px!important;
 }
+.splitscreen-text {
+    margin-top: 15px;
+    /*margin-bottom: 15px;*/
+}
 
 .glyphicon {
     color:white !important;
@@ -100,10 +104,7 @@ font-weight:600!important;
 .embed-responsive-4by3 {
   padding-bottom: 75%;
 }
-.splitscreen-text {
-    margin-top: 15px;
-    /*margin-bottom: 15px;*/
-}
+
 .btn-file {
     position: relative;
     overflow: hidden;

@@ -15,24 +15,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <ul class="list-group">
-                            <li class="list-group-item RemoveBorder"><a ng-click="model.getWidgetType('Header')">Header</a></li>
-                            <li class="list-group-item RemoveBorder">Label</li>
-                            <li class="list-group-item RemoveBorder">HTML</li>
-                            <li class="list-group-item RemoveBorder">Text Label</li>
-                            <li class="list-group-item RemoveBorder">Link</li>
-                            <li class="list-group-item RemoveBorder">Button</li>
-                            <li class="list-group-item RemoveBorder"><a ng-click="model.getWidgetType('Image')">Image</a></li>
-                            <li class="list-group-item RemoveBorder"><a ng-click="model.getWidgetType('Youtube')">YouTube</a></li>
-                            <li class="list-group-item RemoveBorder">Data Table</li>
-                            <li class="list-group-item RemoveBorder">Repeater</li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-8" ng-include="'views/widget/widget-new-'+model.widgetType+'.html'">
+                <div class="col-xs-4">
+                <ul class="list-group">
+                    <li class="list-group-item RemoveBorder"><a ng-click="model.getWidgetType('Header')">Header</a></li>
+                    <li class="list-group-item RemoveBorder">Label</li>
+                    <li class="list-group-item RemoveBorder">HTML</li>
+                    <li class="list-group-item RemoveBorder">Text Label</li>
+                    <li class="list-group-item RemoveBorder">Link</li>
+                    <li class="list-group-item RemoveBorder">Button</li>
+                    <li class="list-group-item RemoveBorder"><a ng-click="model.getWidgetType('Image')">Image</a></li>
+                    <li class="list-group-item RemoveBorder"><a ng-click="model.getWidgetType('youtube')">YouTube</a></li>
+                    <li class="list-group-item RemoveBorder">Data Table</li>
+                    <li class="list-group-item RemoveBorder">Repeater</li>
+                </ul>
+                </div>
+                <div class="col-xs-8" ng-include="'views/widget/widget-new-'+model.widgetType+'.html'">
 
-                    </div>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-1 pull-left navbar-text ">
-                        <a class="portraithide" href="#/user/{{model.userId}}/website/{{model.pg.websiteId}}/page" target="_self"><span class="glyphicon glyphicon-chevron-left glyphicon-widget-color"></span></a>
+                        <a class="portraithide" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" target="_self"><span class="glyphicon glyphicon-chevron-left glyphicon-widget-color"></span></a>
                     </div>
                     <div class="col-xs-9 navbar-brand navbar-brand-widget-color">Edit Page</div>
                     <div class="pull-right col-xs-1 navbar-text">
@@ -28,7 +28,11 @@
                                     <label for="headertext">Title</label>
                                     <input type="text" id="headertext" ng-model="model.pg.title" name="headertext" class="form-control margin-bottom" placeholder="Page Title">
                                 </div>
-                                <a ng-click="model.deletePage()" class="btn btn-danger btn-block">Delete</a>
+                                <div class="form-group">
+                                    <label for="headertext">Description</label>
+                                    <input type="text" id="description" name="description" class="form-control margin-bottom" placeholder="Page Description" ng-model="model.pg.description">
+                                </div>
+                                <a ng-click="model.deletePage()" target="_self" class="btn btn-danger btn-block">Delete</a>
                                 <div class="FormControlSpace"></div>
                 </div>
             </div>

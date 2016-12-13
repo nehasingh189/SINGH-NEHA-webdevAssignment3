@@ -1,20 +1,6 @@
-﻿        <nav style="background-color: #F8F8F8" class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-1 pull-left navbar-text ">
-                        <a class="portraithide" href="widget-list.html" target="_self"><span class="glyphicon glyphicon-chevron-left glyphicon-widget-color"></span></a>
-                    </div>
-                    <div class="col-xs-9 navbar-brand navbar-brand-widget-color">Widget Edit</div>
-                    <div class="pull-right col-xs-1 navbar-text">
-                        <a href="widget-list.html" class="pull-right"><span class="glyphicon glyphicon-ok glyphicon-widget-color"></span></a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <div class="container">
+﻿        <div class="container">
             <div class="row">
                 <div class="TopSpacing">
-                    &nbsp;
                 </div>
             </div>
             <div class="row">
@@ -22,31 +8,22 @@
                     <div class="FormControlSpace"></div>
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" class="form-control margin-bottom" placeholder="Name">
+                        <input type="text" id="name" name="name" ng-model="model.widgets.widgetType" class="form-control margin-bottom" placeholder="Name" ng-init="widget.widgetType = 'YOUTUBE'" disabled>
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label for="headertext">Text</label>
-                        <input type="text" id="headertext" name="headertext" class="form-control margin-bottom" placeholder="Header Text">
-                    </div>
+                        <input type="text" id="headertext" name="headertext" ng-model="model.widgets.widgetType"class="form-control margin-bottom" placeholder="Header Text">
+                    </div>-->
                     <div class="form-group">
                         <label for="imgUrl">URL</label>
-                        <input type="text" id="imgUrl" name="imgUrl" class="form-control margin-bottom" placeholder="Image URL" value="https://youtube/embed/nehasingh.com/northeastern">
+                        <input type="text" id="imgUrl" name="imgUrl" class="form-control margin-bottom" ng-model="model.widgets.url" placeholder="Image URL" />
                     </div>
                     <div class="form-group">
                         <label for="imageWidth">Width</label>
-                        <input type="text" id="imageWidth" name="imageWidth" class="form-control margin-bottom" placeholder="Video Width">
+                        <input type="text" id="imageWidth" name="imageWidth" ng-model="model.widgets.width" class="form-control margin-bottom" placeholder="Video Width">
                     </div>
-                    <button class="btn btn-lg btn-danger btn-block" type="button" onclick="RedirectToWidgetList()">Delete</button>
+                    <button class="btn btn-lg btn-danger btn-block" type="button" ng-click="model.deleteWidget()">Delete</button>
                     <div class="FormControlSpace"></div>
                 </div>
             </div>
         </div>
-        <nav style="background-color: #F8F8F8" class="navbar-default navbar-fixed-bottom ">
-            <div class="container-fluid">
-                <div class="navbar-right">
-                    <div class="navbar-text pull-right">
-                        <a href="Profile.html" target="_self"><span class="glyphicon glyphicon-user glyphicon-widget-color-alt"></span></a>
-                    </div>
-                </div>
-            </div>
-        </nav>

@@ -13,9 +13,13 @@
                 <div class="TopSpacing">&nbsp;
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-xs-12">
                     <div class="FormControlSpace"></div>
+                    <div ng-show="model.error" class="alert alert-danger">
+                        <strong> {{model.error}} </strong>
+                    </div>
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" ng-model="model.user.username" id="username" name="username" class="form-control" placeholder="Username" value="nehasingh189" required autofocus>
@@ -32,8 +36,13 @@
                         <label for="lastName">Last Name</label>
                         <input type="text" id="lastName" ng-model="model.user.lastName" name="lastName" class="form-control margin-bottom" placeholder="Last name" value="Singh" required autofocus>
                     </div>
+                    <div class="form-group">
+                        <label for="lastName">Phone</label>
+                        <input type="text" id="phone" ng-model="model.user.phone" name="phone" class="form-control margin-bottom" placeholder="phone" value="999-999-9999">
+                    </div>
                     <a class="btn btn-primary btn-block" href="#/user/{{model.user._id}}/website">Websites</a>
                     <a class="btn btn-danger btn-block" href="#/login">Logout</a>
+                    <a class="btn btn-warning btn-block" ng-click="model.deleteUser()">Unregister User</a>
                     <div class="FormControlSpace"></div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 (function() {
     angular
-      .module("WebAppMaker")
-      .config(Config);
+        .module("WebAppMaker")
+        .config(Config);
     function Config($routeProvider) {
         $routeProvider
             .when("/login", {
@@ -67,5 +67,5 @@
             .otherwise({
                 redirectTo: "/login"
             });
-        }
+    }
 })();

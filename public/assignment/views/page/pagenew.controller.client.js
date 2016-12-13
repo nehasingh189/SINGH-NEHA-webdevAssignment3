@@ -3,34 +3,29 @@
     .module("WebAppMaker")
     .controller("PageNewController", PageNewController);
 
-    function PageNewController($routeParams, PageService, $location) {
+    function PageNewController($routeParams, PageService,$location) {
         var vm = this;
         
-        vm.userId = parseInt($routeParams.uid);
-        vm.websiteId = parseInt($routeParams.wid);
-     
+        vm.userId = $routeParams.uid;
+        vm.websiteId = $routeParams.wid;
+
         vm.createPage = createPage;
 
-        function createPage(page) {
-            page._id = (new Date()).getTime();
-            page.websiteId = vm.websiteId;
+        function createPage(page)
+        {
+            //page._id = (new Date()).getTime();
+            //page.websiteId = vm.websiteId;
 
-            var retVal = PageService.createPage(page);
+            PageService
+                .createPage(vm.websiteId, page)
+                .success(function (data) {
+                    $location.url("/user/" + vm.userId +"/website/" + vm.websiteId + "/page");
+                })
+                .error(function (data) {
+                    console.log(data);
+                })
 
-            if(retVal === true)
-            {
-                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
-            }
-            else
-            {
-                console.log("Error");
-            }
+
         }
-
-        //var pg = PageService.findPageById(vm.pageId);
-
-        //if (pg != null) {
-        //    vm.pg = pg;
-        //}
     }
 })();

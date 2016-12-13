@@ -3,7 +3,7 @@
     .module("WebAppMaker")
     .controller("WidgetEditController", WidgetEditController);
 
-    function WidgetEditController($routeParams, WidgetService, $sce, $location) {
+    function WidgetEditController($routeParams, WidgetService, $sce , $location) {
         var vm = this;
         
         vm.userId = parseInt($routeParams.uid);
@@ -14,39 +14,42 @@
         vm.updateWidget = updateWidget;
         vm.deleteWidget = deleteWidget;
 
-
         //vm.checkSafeHtml = checkSafeHtml;
         //vm.checkSafeYouTubeUrl = checkSafeYouTubeUrl;
 
         function init() {
-            vm.widgets = WidgetService.findWidgetsById(vm.wgid);
+            //vm.widgets = WidgetService.findWidgetsById(vm.wgid);
+
+            WidgetService.findWidgetsById(vm.wgid)
+                .success(function (widget) {
+                    vm.widgets = widget;
+                })
+                .error(function (data) {
+                    console.log(data);
+                });
         }
+
         init();
 
         function deleteWidget() {
 
-            var retVal = WidgetService.deleteWidget(vm.wgid);
-            if(retVal === true)
-            {
-                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
-            }
-            else
-            {
-                console.log("Error");
-            }
+            WidgetService.deleteWidget(vm.wgid)
+                .success(function () {
+                    $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
+                })
+                .error(function (data) {
+                    console.log(data);
+                });
         }
 
         function updateWidget(widget) {
-            var retVal = WidgetService.updateWidget(vm.wgid, widget);
-            
-            if(retVal === true)
-            {
-                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
-            }
-            else
-            {
-                console.log("Error");
-            }
+            WidgetService.updateWidget(vm.wgid,widget)
+                .success(function () {
+                    $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
+                })
+                .error(function (data) {
+                    console.log(data);
+                });
         }
 
         //function checkSafeHtml(html) {

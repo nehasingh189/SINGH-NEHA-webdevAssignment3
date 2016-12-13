@@ -14,10 +14,9 @@
         <div class="container">
             <div class="row">
                 <div class="TopSpacing">
-                    &nbsp;
                 </div>
             </div>
-            <div class="row">
+            <div class="row wam-widgets">
                     <div class="FormControlSpace"></div>
                     <div ng-repeat="widget in model.widgets" ng-switch="widget.widgetType">
                         <span class="glyphicon glyphicon-align-justify glyphicon-widget-color pull-right"></span> 
@@ -33,10 +32,10 @@
                             <h6 ng-switch-when="6">{{widget.text}}</h6>
                         </div>
                         <div ng-switch-when="IMAGE">
-                            <img width="100%" height="100%" ng-src="{{widget.url}}" alt="Image" />
+                            <img width="{{widget.width}}" height="100%" ng-src="{{widget.url}} + '.' + {{widget.fileext}}" alt="Image" />
                         </div>
                         <div ng-switch-when="YOUTUBE">
-                            <iframe width="100%" height="415" ng-src="{{model.checkSafeYouTubeUrl(widget.url)}}" frameborder="0" allowfullscreen></iframe>
+                            <iframe width="{{widget.width}}" height="415" ng-src="{{model.checkSafeYouTubeUrl(widget.url)}}" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div ng-switch-when="HTML" ng-bind-html="model.checkSafeHtml(widget.text)"></div>
                     </div>            

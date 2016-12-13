@@ -15,7 +15,17 @@
         vm.checkSafeYouTubeUrl = checkSafeYouTubeUrl;
 
         function init() {
-            vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+            //vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+
+            WidgetService.findWidgetsByPageId(vm.pageId)
+                .success(function (widget) {
+                    vm.widgets = widget;
+                })
+                .error(function (data) {
+                    console.log(data);
+                });
+
+            $(".wam-widgets").sortable({axis:'y'});
         }
         init();
 

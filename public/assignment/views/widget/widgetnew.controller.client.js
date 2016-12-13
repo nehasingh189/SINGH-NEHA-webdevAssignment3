@@ -3,17 +3,25 @@
     .module("WebAppMaker")
     .controller("WidgetNewController", WidgetNewController);
 
-    function WidgetNewController($routeParams, WidgetService,$location) {
+    function WidgetNewController($routeParams, WidgetService, $location, $http) {
         var vm = this;
         
         vm.userId = parseInt($routeParams.uid);
         vm.websiteId = parseInt($routeParams.wid);
         vm.pageId = parseInt($routeParams.pid);
-
         vm.getWidgetType = getWidgetType;
         vm.createWidget = createWidget;
+        //vm.UploadImage = UploadImage;
 
-        function getWidgetType(str) {
+        /*function  UploadImage(){
+            alert(vm.myFile);
+
+            var url = "/api/upload";
+            $http.post(url,function (response) { alert(response); }, function (failure) { alert(failure);});
+        }*/
+
+        function getWidgetType(str)
+        {
             vm.widgetType = str;
         }
 
@@ -21,16 +29,16 @@
             widget._id = (new Date()).getTime();
             widget.pageId = vm.pageId;
 
-            var retVal = WidgetService.createWidget(widget);
-
-            if(retVal === true)
-            {
-                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
-            }
-            else
-            {
-                console.log("Error");
-            }
+            WidgetService
+                .createWidget(widget)
+                .success(function (data) {
+                    //vm.websites = WebsiteService.findWebsiteForUser(vm.userId);
+                    //init();
+                    $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page/"+vm.pageId+"/widget");
+                })
+                .error(function (data) {
+                    console.log(data);
+                })
         }
     }
 })();

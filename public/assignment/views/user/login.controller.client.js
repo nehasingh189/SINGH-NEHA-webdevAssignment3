@@ -9,14 +9,19 @@
         vm.login = login;
 
             function login(username, password) {
-                var user = UserService.findUserByCredentials(username, password);
-
-                if (user === null) {
-                    vm.error = "Username or password is incorrect.";
-                }
-                else {
-                    $location.url("/user/" + user._id);
-                }
+                UserService
+                    .findUserByCredentials(username, password)
+                    .success(function (user) {
+                        if (user === '0') {
+                            vm.error = "Username or password is incorrect.";
+                        }
+                        else {
+                            $location.url("/user/" + user._id);
+                        }
+                    })
+                    .error(function (data) {
+                        console.log(data);
+                    })
             }
     }
 
