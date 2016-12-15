@@ -1,0 +1,29 @@
+﻿        <div class="container">
+            <div class="row">
+                <div class="TopSpacing">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="FormControlSpace"></div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" ng-model="model.widgets.widgetType" class="form-control margin-bottom" placeholder="Name" ng-init="widget.widgetType = 'YOUTUBE'" disabled>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="headertext">Text</label>
+                        <input type="text" id="headertext" name="headertext" ng-model="model.widgets.widgetType"class="form-control margin-bottom" placeholder="Header Text">
+                    </div>-->
+                    <div class="form-group">
+                        <label for="imgUrl">URL</label>
+                        <input type="text" id="imgUrl" name="imgUrl" class="form-control margin-bottom" ng-model="model.widgets.url" placeholder="Image URL" />
+                    </div>
+                    <div class="form-group">
+                        <label for="imageWidth">Width</label>
+                        <input type="text" id="imageWidth" name="imageWidth" ng-model="model.widgets.width" class="form-control margin-bottom" placeholder="Video Width">
+                    </div>
+                    <button class="btn btn-lg btn-danger btn-block" type="button" ng-click="model.deleteWidget()">Delete</button>
+                    <div class="FormControlSpace"></div>
+                </div>
+            </div>
+        </div>

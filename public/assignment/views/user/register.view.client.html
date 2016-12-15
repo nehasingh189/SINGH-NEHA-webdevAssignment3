@@ -1,0 +1,33 @@
+﻿        <div class="container">
+            <div class="row">
+                <div class="TopSpacing">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="FormControlSpace"></div>
+                    <h2 class="form-signin-heading">Register</h2>
+                    <div ng-show="model.error" class="alert alert-danger">
+                        <strong> {{model.error}} </strong>
+                    </div>
+                    <div ng-show="model.success" class="alert alert-danger">
+                        <strong> {{model.success}} </strong>
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="sr-only">Email address</label>
+                        <input type="text" id="username" ng-model="model.username" name="username" class="form-control margin-bottom" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" id="inputPassword" ng-model="model.inputPassword" name="inputPassword" class="form-control margin-bottom" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="verifyPassword" class="sr-only">Password</label>
+                        <input type="password" id="verifyPassword" ng-model="model.verifyPassword" name="verifyPassword" class="form-control margin-bottom" placeholder="Verify Password">
+                    </div>
+                    <a class="btn btn-primary btn-block" ng-click="model.register(model.username,model.inputPassword,model.verifyPassword)">Register</a>
+                    <a class="btn btn-danger btn-block" href="#/login">Cancel</a>
+                    <div class="FormControlSpace"></div>
+                </div>
+            </div>
+        </div>

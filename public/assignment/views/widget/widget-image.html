@@ -1,0 +1,48 @@
+﻿        <div class="container">
+            <div class="row">
+                <div class="TopSpacing">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="FormControlSpace"></div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control margin-bottom" ng-model="model.widgets.widgetType" placeholder="Name" disabled>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="headertext">Text</label>
+                        <input type="text" id="headertext" name="headertext" ng-model="model.widgets.widgetType" class="form-control margin-bottom" placeholder="Header Text" value="University of Oxford snatches top spot from Caltech in this year's World University Rankings as Asia's rise continues">
+                    </div>-->
+                    <div class="form-group">
+                        <label for="imgUrl">URL</label>
+                        <input type="text" id="imgUrl" name="imgUrl" ng-model="model.widgets.url" class="form-control margin-bottom" placeholder="Image URL" value="https://nehasingh.com/Oxford.html" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageWidth">Width</label>
+                        <input type="text" id="imageWidth" name="himageWidth" ng-model="model.widgets.width" class="form-control margin-bottom" placeholder="Image Width" value="100%">
+                    </div>
+                    <div class="form-group">
+
+                        <form action="/api/upload"  method="post" enctype="multipart/form-data">
+                            <input  name="myFile"   type="file" class="form-control"/>
+                            <input  name="width"    value="{{model.widgets.width}}" />
+                            <input  name="widgetId" value="{{model.widgets._id}}"   />
+                            <input  name="pageid" value="{{model.widgets.pageId}}"   />
+                            <input  name="userid" value="{{model.userId}}"   />
+                            <input  name="websiteid" value="{{model.websiteId}}"   />
+                            <br/>
+                            <button type="submit"   class="btn btn-block btn-primary">Upload Image</button>
+                        </form>
+
+                        <!--<span class="btn btn-default btn-block btn-file text-left" style="text-align:left!important;">
+                            Choose File <input type="file"> <span class="text-muted">&nbsp;&nbsp;&nbsp; No file chosen</span>
+                        </span>-->
+                    </div>
+                    <!--<button class="btn btn-primary btn-block" type="button">Upload Image</button>-->
+                    <button class="btn btn-lg btn-danger btn-block" type="button" ng-click="model.deleteWidget()">Delete</button>
+                    <div class="FormControlSpace"></div>
+                </div>
+            </div>
+        </div>

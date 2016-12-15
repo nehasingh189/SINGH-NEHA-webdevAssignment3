@@ -1,0 +1,57 @@
+﻿        <nav style="background-color: #F8F8F8" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-1 pull-left navbar-text ">
+                        <a class="portraithide" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" target="_self"><span class="glyphicon glyphicon-chevron-left glyphicon-widget-color"></span></a>
+                    </div>
+                    <div class="col-xs-9 navbar-brand navbar-brand-widget-color">Widgets</div>
+                    <div class="pull-right col-xs-1 navbar-text">
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new" class="pull-right"><span class="glyphicon glyphicon-plus glyphicon-widget-color"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="TopSpacing">
+                </div>
+            </div>
+            <div class="row wam-widgets">
+                    <div class="FormControlSpace"></div>
+                    <div ng-repeat="widget in model.widgets" ng-switch="widget.widgetType">
+                        <span class="glyphicon glyphicon-align-justify glyphicon-widget-color pull-right"></span> 
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}" class="pull-right">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </a>
+                        <div ng-switch-when="HEADER" ng-switch="widget.size">
+                            <h1 ng-switch-when="1">{{widget.text}}</h1>
+                            <h2 ng-switch-when="2">{{widget.text}}</h2>
+                            <h3 ng-switch-when="3">{{widget.text}}</h3>
+                            <h4 ng-switch-when="4">{{widget.text}}</h4>
+                            <h5 ng-switch-when="5">{{widget.text}}</h5>
+                            <h6 ng-switch-when="6">{{widget.text}}</h6>
+                        </div>
+                        <div ng-switch-when="IMAGE">
+                            <img width="{{widget.width}}" height="100%" ng-src="{{widget.url}} + '.' + {{widget.fileext}}" alt="Image" />
+                        </div>
+                        <div ng-switch-when="YOUTUBE">
+                            <iframe width="{{widget.width}}" height="415" ng-src="{{model.checkSafeYouTubeUrl(widget.url)}}" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div ng-switch-when="HTML" ng-bind-html="model.checkSafeHtml(widget.text)"></div>
+                    </div>            
+                    <div class="FormControlSpace"></div>
+            </div>
+        </div>
+        <nav style="background-color: #F8F8F8" class="navbar-default navbar-fixed-bottom ">
+            <div class="container-fluid">
+                <div class="navbar">
+                    <div class="navbar-text pull-left">
+                        <a href="#" target="_self"><span class="glyphicon glyphicon-play glyphicon-widget-color"></span></a>&nbsp;
+                        <a href="#" target="_self"><span class="glyphicon glyphicon-eye-open glyphicon-widget-color"></span></a>
+                    </div>
+                    <div class="navbar-text pull-right">
+                        <a href="#/user/{{model.userId}}" target="_self"><span class="glyphicon glyphicon-user glyphicon-widget-color-alt"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>

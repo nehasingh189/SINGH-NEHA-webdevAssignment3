@@ -1,0 +1,54 @@
+﻿<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="row container-fluid">
+        <div class="col-sm-4 hidden-xs navbar-header">
+            <div class="col-xs-1 pull-left splitscreen-text" style="padding:0px;">
+                <a class="portraithide" href="#/user/{{model.userId}}/website" target="_self"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            </div>
+            <div class="col-xs-9 navbar-brand">Websites</div>
+            <div class="pull-right col-xs-2 splitscreen-text" style="padding:0px;">
+                <a href="#/user/{{model.userId}}/website/new" class="pull-right"><span class="glyphicon glyphicon-plus"></span></a>
+            </div>
+        </div>
+        <div class="col-sm-8 navbar-header">
+            <div class="col-xs-1 pull-left navbar-text hidethisg">
+                <a class="portraithide" href="#/user/{{model.userId}}/website" target="_self"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            </div>
+            <div class="col-xs-9 navbar-brand">Edit Website</div>
+            <div class="pull-right col-xs-1 navbar-text">
+                <a ng-click="model.updateWebsite(model.websiteedit)" class="pull-right"><span class="glyphicon glyphicon-ok"></span></a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="row container-fluid">
+    <div class="FormControlSpace"></div>
+    <div class="col-sm-4 hidden-xs">
+        <ul class="list-group">
+            <li ng-repeat="website in model.websites" class="list-group-item RemoveBorder"><a href="#/user/{{model.userId}}/website/{{website._id}}/page" target="_self"> {{website.name}}</a> <a href="#/user/{{model.userId}}/website/{{website._id}}" target="_self"><span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+        </ul>
+    </div>
+    <div class="col-sm-8">
+        <div class="FormControlSpace"></div>
+        <div class="form-group">
+            <label for="webname">Name</label>
+            <input type="text" id="webname" ng-model="model.websiteedit.name" name="webname" class="form-control" value="Blogger" placeholder="Name" />
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" rows="4" name="description" ng-model="model.websiteedit.desc" class="form-control" placeholder="Description">
+                Blogger is a blog-publishing service that allows multi-user blogs with time-stamped entries. It was developed by Neha Labs, which was bought by Google in 2003.
+            </textarea>
+        </div>
+        <a class="btn btn-danger btn-block" ng-click="model.deleteWebsite()">Delete</a>
+        <div class="FormControlSpace"></div>
+    </div>
+</div>
+<nav class="navbar-default navbar-fixed-bottom" style="overflow:hidden">
+    <div class="container-fluid">
+        <div class="navbar-right">
+            <div class="navbar-text pull-right">
+                <a href="#/user/{{model.userId}}" target="_self"><span class="glyphicon glyphicon-user"></span></a>
+            </div>
+        </div>
+    </div>
+</nav>

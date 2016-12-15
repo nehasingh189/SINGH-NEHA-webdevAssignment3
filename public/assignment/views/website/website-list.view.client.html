@@ -1,0 +1,38 @@
+﻿        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-1 pull-left navbar-text ">
+                        <a class="portraithide" href="#/user/{{model.userId}}" target="_self"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                    </div>
+                    <div class="col-xs-9 navbar-brand">Websites</div>
+                    <div class="pull-right col-xs-1 navbar-text">
+                        <a href="#/user/{{model.userId}}/website/new" class="pull-right"><span class="glyphicon glyphicon-plus"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="TopSpacingList">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                        <div class="row">
+                            <ul class="list-group">
+                                <li ng-repeat="website in model.websites" class="list-group-item RemoveBorder"><a href="#/user/{{model.userId}}/website/{{website._id}}/page" target="_self"> {{website.name}}</a> <a href="#/user/{{model.userId}}/website/{{website._id}}" target="_self"><span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-default navbar-fixed-bottom ">
+            <div class="container-fluid">
+                <div class="navbar-right">
+                    <div class="navbar-text pull-right">
+                        <a href="#/user/{{model.userId}}" target="_self"><span class="glyphicon glyphicon-user"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>

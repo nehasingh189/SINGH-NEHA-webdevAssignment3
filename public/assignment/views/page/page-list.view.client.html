@@ -1,0 +1,37 @@
+﻿        <nav style="background-color: #F8F8F8" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-1 pull-left navbar-text ">
+                        <a class="portraithide" href="#/user/{{model.userId}}/website" target="_self"><span class="glyphicon glyphicon-chevron-left glyphicon-widget-color"></span></a>
+                    </div>
+                    <div class="col-xs-9 navbar-brand navbar-brand-widget-color">Pages</div>
+                    <div class="pull-right col-xs-1 navbar-text">
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="pull-right"><span class="glyphicon glyphicon-plus glyphicon-widget-color"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="TopSpacingList">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <ul class="list-group">
+                    <li ng-repeat="page in model.pages" class="list-group-item RemoveBorder">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget" target="_self">{{page.name}}</a>
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}" target="_self"><span class="glyphicon glyphicon-cog pull-right"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <nav style="background-color: #F8F8F8" class="navbar-default navbar-fixed-bottom ">
+            <div class="container-fluid">
+                <div class="navbar-right">
+                    <div class="navbar-text pull-right">
+                        <a href="#/user/{{model.userId}}" target="_self"><span class="glyphicon glyphicon-user glyphicon-widget-color-alt"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>

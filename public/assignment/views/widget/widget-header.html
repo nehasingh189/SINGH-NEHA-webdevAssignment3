@@ -1,0 +1,26 @@
+﻿        <div class="container">
+            <div class="row">
+                <div class="TopSpacing">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="FormControlSpace"></div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" ng-model="model.widgets.widgetType" class="form-control margin-bottom" placeholder="Name"  disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="headertext">Text</label>
+                        <input type="text" id="headertext" name="headertext" ng-model="model.widgets.text" class="form-control margin-bottom" placeholder="Header Text" value="University of Oxford snatches top spot from Caltech in this year's World University Rankings as Asia's rise continues">
+                    </div>
+                    <div class="form-group">
+                        <label for="fontSize">Size</label>
+                        <input type="number" id="fontSize" name="fontSize" ng-model="model.widgets.size" class="form-control margin-bottom" placeholder="Font Size" value="3">
+                    </div>
+                    <button class="btn btn-lg btn-danger btn-block" type="button" ng-click="model.deleteWidget()">Delete</button>
+                    <div class="FormControlSpace"></div>
+                </div>
+            </div>
+        </div>

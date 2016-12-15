@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="author" content="Neha Singh" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Widget Edit</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/Assignment2.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="js/Assignment2.js" type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1">
+        <nav style="background-color: #F8F8F8" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-1 pull-left navbar-text ">
+                        <a class="portraithide" href="widget-list.html" target="_self"><span class="glyphicon glyphicon-chevron-left glyphicon-widget-color"></span></a>
+                    </div>
+                    <div class="col-xs-9 navbar-brand navbar-brand-widget-color">Widget Edit</div>
+                    <div class="pull-right col-xs-1 navbar-text">
+                        <a href="widget-list.html" class="pull-right"><span class="glyphicon glyphicon-ok glyphicon-widget-color"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="TopSpacing">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="FormControlSpace"></div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control margin-bottom" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="headertext">Text</label>
+                        <input type="text" id="headertext" name="headertext" class="form-control margin-bottom" placeholder="Header Text" value="University of Oxford snatches top spot from Caltech in this year's World University Rankings as Asia's rise continues">
+                    </div>
+                    <div class="form-group">
+                        <label for="imgUrl">URL</label>
+                        <input type="text" id="imgUrl" name="imgUrl" class="form-control margin-bottom" placeholder="Image URL" value="https://nehasingh.com/Oxford.html">
+                    </div>
+                    <div class="form-group">
+                        <label for="imageWidth">Width</label>
+                        <input type="text" id="imageWidth" name="himageWidth" class="form-control margin-bottom" placeholder="Image Width" value="100%">
+                    </div>
+                    <div class="form-group">
+                        <span class="btn btn-default btn-block btn-file text-left" style="text-align:left!important;">
+                            Choose File <input type="file"> <span class="text-muted">&nbsp;&nbsp;&nbsp; No file chosen</span>
+                        </span>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="button">Upload Image</button>
+                    <button class="btn btn-lg btn-danger btn-block" type="button" onclick="RedirectToWidgetList()">Delete</button>
+                    <div class="FormControlSpace"></div>
+                </div>
+            </div>
+        </div>
+        <nav style="background-color: #F8F8F8" class="navbar-default navbar-fixed-bottom ">
+            <div class="container-fluid">
+                <div class="navbar-right">
+                    <div class="navbar-text pull-right">
+                        <a href="Profile.html" target="_self"><span class="glyphicon glyphicon-user glyphicon-widget-color-alt"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </form>
+</body>
+</html>
