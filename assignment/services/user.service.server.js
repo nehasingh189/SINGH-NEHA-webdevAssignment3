@@ -2,6 +2,7 @@
  * Created by Neha Singh on 19/11/2016.
  */
 module.exports = function (app, model) {
+<<<<<<< HEAD
 
     var passport = require('passport');
     var LocalStrategy = require('passport-local').Strategy;
@@ -21,6 +22,8 @@ module.exports = function (app, model) {
     passport.serializeUser(serializeUser);
     passport.deserializeUser(deserializeUser);
 
+=======
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
     var users = [
         { _id: 123, username: "alice", password: "alice", firstName: "Alice", lastName: "Wonder", email:"alice@gmail.com" },
         { _id: 234, username: "bob", password: "bob", firstName: "Bob", lastName: "Marley", email: "bob@gmail.com" },
@@ -28,15 +31,20 @@ module.exports = function (app, model) {
         { _id: 456, username: "jannunzi", password: "jannunzi", firstName: "Jose", lastName: "Annunzi", email: "jannunzi@gmail.com" }
     ];
 
+<<<<<<< HEAD
     app.post('/api/login',passport.authenticate('local'),login);
     app.post('/api/user', createUser);
     app.post('/api/checkLogin', checkLogin);
     app.post('/api/logOut', logOut);
+=======
+    app.post('/api/user', createUser);
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
     app.get('/api/user', findUser);
     app.get('/api/user/:uid', findUserById);
     app.put('/api/user/:uid', updateUser);
     app.delete('/api/user/:uid', deleteUser);
 
+<<<<<<< HEAD
     function logOut(req,res) {
         req.logout();
         res.send(200);
@@ -88,6 +96,8 @@ module.exports = function (app, model) {
             });
     }
 
+=======
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
     function deleteUser(req,res) {
 
         var userid = req.params.uid;

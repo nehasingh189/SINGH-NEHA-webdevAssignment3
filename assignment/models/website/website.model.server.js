@@ -18,6 +18,10 @@ module.exports = function () {
     return api;
 
     function setModel(_model) {
+<<<<<<< HEAD
+=======
+        console.log("In SetModel website.model " + _model);
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
         model = _model;
     }
 
@@ -38,6 +42,7 @@ module.exports = function () {
                                     break;
                                 }
                             }
+<<<<<<< HEAD
 
                             var pages = website.pages;
                             if(pages.length ==0) {
@@ -66,6 +71,9 @@ module.exports = function () {
                             }
 
 
+=======
+                            return WebsiteModel.remove({_id: websiteId});
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
                         },
                         function (error) {
                             return error;

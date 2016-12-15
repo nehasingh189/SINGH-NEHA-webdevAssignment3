@@ -1,7 +1,12 @@
 (function() {
     angular
+<<<<<<< HEAD
       .module("WebAppMaker")
       .config(Config);
+=======
+        .module("WebAppMaker")
+        .config(Config);
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
     function Config($routeProvider) {
         $routeProvider
             .when("/login", {
@@ -17,10 +22,14 @@
             .when("/user/:uid", {
                 templateUrl: "views/user/profile.view.client.html",
                 controller: "ProfileController",
+<<<<<<< HEAD
                 controllerAs: "model",
                 resolve:{
                     checkLogin:checkLogin
                 }
+=======
+                controllerAs: "model"
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
             })
             .when("/user/:uid/website", {
                 templateUrl: "views/website/website-list.view.client.html",
@@ -70,6 +79,7 @@
             .otherwise({
                 redirectTo: "/login"
             });
+<<<<<<< HEAD
 
         function checkLogin($q, UserService, $location) {
 
@@ -90,4 +100,7 @@
             return deffered.promise;
         }
         }
+=======
+    }
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
 })();

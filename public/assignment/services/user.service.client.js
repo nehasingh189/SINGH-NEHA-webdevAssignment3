@@ -17,14 +17,19 @@
             findUserById: findUserById, // returns the user in local users array whose _id matches the userId parameter
             findUserByUsername: findUserByUsername, // returns the user in local users array whose username matches the parameter username
             updateUser: updateUser,
+<<<<<<< HEAD
             deleteUser: deleteUser,
             login:login,
             checkLogin: checkLogin,
             logOut:logOut
+=======
+            deleteUser: deleteUser
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
         };
 
         return api;
 
+<<<<<<< HEAD
         function logOut(){
             return $http.post("/api/logOut");
         }
@@ -39,6 +44,8 @@
                     };
             return $http.post("/api/login",user);
         }
+=======
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
         function createUser(user) {
             return $http.post('/api/user',user);
             /*

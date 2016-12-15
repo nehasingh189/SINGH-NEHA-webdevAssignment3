@@ -7,11 +7,16 @@
     "body-parser": "^1.15.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
+<<<<<<< HEAD
     "express-session": "^1.14.2",
     "mongoose": "^4.7.2",
     "multer": "^1.2.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
+=======
+    "mongoose": "^4.4.15",
+    "multer": "^1.2.0"
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
   },
   "devDependencies": {},
   "scripts": {

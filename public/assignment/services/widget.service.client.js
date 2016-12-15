@@ -31,8 +31,13 @@
             var url = "/api/upload";
             return $http.post(url,myFile);
         }
+<<<<<<< HEAD
         function createWidget(pageId, widget) {
             var url = "/api/page/"+pageId+"/widget";
+=======
+        function createWidget(widget) {
+            var url = "/api/page/"+widget.pageId+"/widget";
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
             return $http.post(url,widget);
         }
 

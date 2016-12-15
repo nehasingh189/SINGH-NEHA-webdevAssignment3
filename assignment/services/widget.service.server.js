@@ -1,7 +1,11 @@
 /**
  * Created by Neha Singh on 20/11/2016.
  */
+<<<<<<< HEAD
 module.exports = function (app, model) {
+=======
+module.exports = function (app) {
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
     var widgets = [
         { _id: 123, widgetType: "HEADER", pageId: 321, size: 2, text: "GIZMODO" } ,
         { _id: 234, widgetType: "HEADER", pageId: 321, size: 4, text: "Lorem ipsum" },
@@ -23,6 +27,7 @@ module.exports = function (app, model) {
     app.post('/api/page/:pageId/widget', createWidget);
 
     function createWidget(req,res) {
+<<<<<<< HEAD
 
         var widget = req.body;
         var pageId = req.params.pageId;
@@ -41,6 +46,11 @@ module.exports = function (app, model) {
         /*var widget = req.body;
         widgets.push(widget);
         res.send(widget);*/
+=======
+        var widget = req.body;
+        widgets.push(widget);
+        res.send(widget);
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
     }
 
     function uploadImage(req, res) {

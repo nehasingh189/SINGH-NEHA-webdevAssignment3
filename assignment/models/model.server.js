@@ -10,18 +10,28 @@ module.exports = function () {
     var userModel = require("./user/user.model.server")();
     var websiteModel = require("./website/website.model.server")();
     var pageModel= require("./page/page.model.server")();
+<<<<<<< HEAD
     var widgetModel = require("./widget/widget.model.server")();
+=======
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
 
     var model = {
         userModel : userModel,
         websiteModel : websiteModel,
+<<<<<<< HEAD
         pageModel: pageModel,
         widgetModel: widgetModel
+=======
+        pageModel: pageModel
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
     };
     websiteModel.setModel(model);
     userModel.setModel(model);
     pageModel.setModel(model);
+<<<<<<< HEAD
     widgetModel.setModel(model);
+=======
+>>>>>>> b4f3e40382553237058b388dc6a4f0d813592dd8
 
     return model;
 
